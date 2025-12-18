@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Advanced Spring Calculator (k and Work Done)</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QHBoxLayout" name="horizontalLayout_main">
+    <item>
+     <layout class="QVBoxLayout" name="verticalLayout_controls">
+      <property name="spacing">
+       <number>12</number>
+      </property>
+      <property name="leftMargin">
+       <number>0</number>
+      </property>
+      <property name="topMargin">
+       <number>0</number>
+      </property>
+      <property name="rightMargin">
+       <number>0</number>
+      </property>
+      <property name="bottomMargin">
+       <number>0</number>
+      </property>
+      <item>
+       <widget class="QGroupBox" name="groupBoxInputK">
+        <property name="title">
+         <string>Spring Constant (k = F/x)</string>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_inputK">
+         <item row="0" column="0">
+          <widget class="QLabel" name="labelForce">
+           <property name="text">
+            <string>Force F (N):</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QLineEdit" name="lineEditForce"/>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="labelDisplacement">
+           <property name="text">
+            <string>Displacement x (m):</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QLineEdit" name="lineEditDisplacement"/>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButtonCalculateK">
+        <property name="text">
+         <string>Calculate Spring Constant k</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="Line" name="line_K">
+        <property name="orientation">
+         <enum>Qt::Orientation::Horizontal</enum>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QGroupBox" name="groupBoxInputIntegral">
+        <property name="title">
+         <string>Work Done (Integral W)</string>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_inputIntegral">
+         <item row="0" column="0">
+          <widget class="QLabel" name="labelInitialDisplacement">
+           <property name="text">
+            <string>Initial Displacement x1 (m):</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QLineEdit" name="lineEditInitialDisplacement"/>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="labelFinalDisplacement">
+           <property name="text">
+            <string>Final Displacement x2 (m):</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QLineEdit" name="lineEditFinalDisplacement"/>
+         </item>
+         <item row="2" column="0">
+          <widget class="QLabel" name="labelSpringConstantK_Integral">
+           <property name="text">
+            <string>Spring Constant k (N/m):</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1">
+          <widget class="QLineEdit" name="lineEditSpringConstantK_Integral"/>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButtonCalculateWork">
+        <property name="text">
+         <string>Calculate Work Done W</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="Line" name="line_W">
+        <property name="orientation">
+         <enum>Qt::Orientation::Horizontal</enum>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QGroupBox" name="groupBoxResults">
+        <property name="title">
+         <string>Results</string>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_results">
+         <item>
+          <widget class="QLabel" name="labelResultK">
+           <property name="font">
+            <font>
+             <pointsize>10</pointsize>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="text">
+            <string>Spring Constant k = </string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="labelResultWork">
+           <property name="font">
+            <font>
+             <pointsize>10</pointsize>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="text">
+            <string>Work Done W = </string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <spacer name="verticalSpacer">
+        <property name="orientation">
+         <enum>Qt::Orientation::Vertical</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>40</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <widget class="QGroupBox" name="groupBoxPlot">
+      <property name="title">
+       <string>F vs. x Plot</string>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_plot">
+       <item>
+        <widget class="QWidget" name="plotWidgetContainer" native="true">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+           <horstretch>1</horstretch>
+           <verstretch>1</verstretch>
+          </sizepolicy>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
